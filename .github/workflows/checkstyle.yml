@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           repository: hyphae/apis-bom
-          ref: b97327618f9ebdae71db8569cae8eaa56883c500
+          ref: 7cb7e80430a170abfe5ba00376017171a6a1a829
           path: apis-bom   # put it in ./apis-bom, not in the root
 
       # 4. Build the BOM and store it in the local Maven cache (~/.m2).
