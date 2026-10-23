@@ -1,0 +1,36 @@
+name: Checkstyle
+
+on:
+  pull_request:
+  push:
+    branches: [vertex-4]
+
+permissions:
+  contents: read
+
+jobs:
+  checkstyle:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      
+      - name: "Setup Java"
+        uses: actions/setup-java@c5195efecf7bdfc987ee8bae7a71cb8b11521c00  # v4.7.1
+        with:
+          distribution: temurin
+          java-version: '11'
+          cache: maven
+
+
+      - name: Run Checkstyle
+        run: mvn -B checkstyle:check
+
+      - name: "Upload artifact"
+        if: always()
+        uses: actions/upload-artifact@4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1 # v4.6.1
+        with:
+          name: checkstyle-report
+          path: target/checkstyle-result.xml
