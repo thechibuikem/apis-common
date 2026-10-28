@@ -3,7 +3,7 @@ name: Checkstyle
 on:
   pull_request:
   push:
-    branches: [vertex-4]
+    branches: [main, stable-vertx-3.9, vertex-4]
 
 permissions:
   contents: read
