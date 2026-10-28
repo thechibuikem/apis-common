@@ -89,7 +89,7 @@
           <configLocation>checkstyle.xml</configLocation>
           <encoding>UTF-8</encoding>
           <consoleOutput>true</consoleOutput>
-          <failOnViolation>false</failOnViolation>
+          <violationSeverity>warning</violationSeverity>
           <includeTestSourceDirectory>true</includeTestSourceDirectory>
         </configuration>
         </plugin>
